@@ -5,14 +5,32 @@ import { ROUTES } from '../constants/routes';
 
 import styles from './Navbar.module.css';
 
-const { home, about, contact } = ROUTES;
+const { home, about, contact, pricing } = ROUTES;
+const menuItems = [
+	{
+		text: 'Home',
+		href: home,
+	},
+	{
+		text: 'About',
+		href: about,
+	},
+	{
+		text: 'Contact',
+		href: contact,
+	},
+	{
+		text: 'Pricing',
+		href: pricing,
+	},
+];
 
 export function Navbar() {
 	return (
 		<nav className={styles['menu-container']}>
-			<ActiveLink text="Home" href={{ pathname: home }} />
-			<ActiveLink text="About" href={{ pathname: about }} />
-			<ActiveLink text="Contact" href={{ pathname: contact }} />
+			{menuItems.map(({ text, href }) => (
+				<ActiveLink key={href} text={text} href={href} />
+			))}
 		</nav>
 	);
 }

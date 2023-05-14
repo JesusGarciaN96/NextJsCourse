@@ -12,7 +12,7 @@ export default function ActiveLink({ text, href }) {
 
 	return (
 		<Link href={href}>
-			<span style={asPath === href.pathname ? style : null}>{text}</span>
+			<span style={asPath === href ? style : null}>{text}</span>
 		</Link>
 	);
 }
