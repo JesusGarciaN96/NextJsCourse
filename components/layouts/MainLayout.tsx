@@ -5,7 +5,12 @@ import { Navbar } from '../Navbar';
 
 import styles from './MainLayout.module.css';
 
-export default function MainLayout({ children, title }) {
+interface Props {
+	title: string;
+	children: JSX.Element
+}
+
+export default function MainLayout({ children, title }: Props): JSX.Element {
 	return (
 		<div className={styles.container}>
 			<Head>
